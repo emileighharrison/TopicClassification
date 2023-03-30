@@ -1,0 +1,15 @@
+---
+# Data (must be a csv file)
+training_data: C:/Users/emmea/Documents/GitHub/TopicClassification/data/training_data.csv
+prediction_data: C:/Users/emmea/Documents/GitHub/TopicClassification/data/prediction_data.csv
+
+# Name of variable containing text data 
+training_text: text
+training_labels: key_theme_1
+prediction_text: text
+
+# Output CSV (must be a csv file)
+output_bigrams: C:/Users/emmea/Documents/GitHub/TopicClassification/data/bigrams.csv
+output_predictions: C:/Users/emmea/Documents/GitHub/TopicClassification/data/topic_predictions.csv
+output_performance: C:/Users/emmea/Documents/GitHub/TopicClassification/data/kfold_accuracy.csv
+...

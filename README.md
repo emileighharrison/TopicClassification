@@ -69,10 +69,10 @@ After: `["i", "really", "enjoy", "learn", "college_algebra", "professor", "smith
 The detected bigrams are saved in a csv specified by the user in the YAML. The user may want to inspect the bigrams to make sure they look reasonable. The part of the code that trains a model to detect bigrams looks like this: `bigrams = Phrases(train_bigrams, min_count=10, threshold=25)`. It may be useful to play with the `min_count` (minimum number of times a bigram has to appear to be added to the list) and `threshold` (how sensitive the bigram detection model is with higher numbers indicating less sensative or fewer bigrams detected) depending on your data. You will get different bigrams list and potentially different final model accuracies if you change these parameters (though we do not expect final model accuracies to change very much).
 
 ### Converting the Text into Numeric Data
-Before we can train a model, we need to convert our text into data. Suppose we have two survey responses. The first response says: `"I love all my classes"` and the second response says `"My classes were hard, but useful"`. After data cleaning, we create a matrix of word frequencies that look like the following:
+Before we can train a model, we need to convert our text into data. Suppose we have two survey responses. The first response says: `"I love, love all my classes"` and the second response says `"My classes were hard, but useful"`. After data cleaning, we create a matrix of word frequencies that look like the following:
 |  | i | love | class | hard | useful |
 | --- | --- | --- | --- | --- | --- |
-| Response 1 | 1 | 1 | 1 | 0 | 0 |
+| Response 1 | 1 | 2 | 1 | 0 | 0 |
 | Response 2 | 0 | 0 | 1 | 1 | 1 |
 
 Then we weight the frequencies by the number of time each word appears using term frequency–inverse document frequency (TF-IDF) to reflect how important a word is to the collection of survey responses.  
